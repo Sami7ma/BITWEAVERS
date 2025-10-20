@@ -15,8 +15,8 @@
   if (storedTheme === 'dark' || storedTheme === 'light') {
     docEl.setAttribute('data-theme', storedTheme);
   } else {
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    docEl.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+    // Always start in light mode by default
+    docEl.setAttribute('data-theme', 'light'); 
   }
 
   // Theme toggle
@@ -25,6 +25,13 @@
       const next = docEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       docEl.setAttribute('data-theme', next);
       localStorage.setItem('tbw-theme', next);
+
+      // update icon
+      const icon = themeToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-moon', next === 'light');
+        icon.classList.toggle('fa-sun', next === 'dark');
+      }
     });
   }
 
@@ -63,5 +70,3 @@
 
   // No dynamic logo loading; using local assets only as requested
 })();
-
-
