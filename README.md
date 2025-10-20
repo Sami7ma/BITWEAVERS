@@ -1,4 +1,4 @@
-# The Bitweavers Website (Replica)
+# Bitweavers Website (Replica)
 
 A modern, responsive website as an alternative for The Bitweavers Company.
 
