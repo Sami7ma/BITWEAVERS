@@ -1,141 +1,214 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bit Weavers — Hospital & Enterprise Solutions</title>
     <meta name="description" content="Hospital automation (EMR), HR platforms, and IT infrastructure—built reliably by Bit Weavers.">
+
+    <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Load Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Load CSS and icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Favicon and meta tags -->
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+    <meta name="theme-color" content="#0ea5e9">
   </head>
   <body>
-    <header class="site-header" id="top">
-      <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Bit Weavers home">
-          <img src= "hospitalimage/bitwears.png" alt="Bit Weavers" class="brand-logo" />
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+      <div class="loading-spinner" aria-label="Loading content">
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+    </div>
+
+    <!-- Skip links for keyboard navigation -->
+    <a href="#main" class="sr-only">Skip to main content</a>
+
+    <header class="header" id="top">
+      <div class="container header-content">
+        <a class="brand" href="#top">
+          <img src="hospitalimage/bitwears.png" alt="Bit Weavers" class="logo-img" />
         </a>
-        <nav class="site-nav" aria-label="Primary">
-          <button class="nav-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="sr-only">Toggle menu</span><i class="fa-solid fa-bars"></i></button>
-          <ul id="primary-menu" class="menu">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#clients">Clients</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button></li>
-            <li class="cta-li"><a class="btn btn-primary" href="#contact">Get in touch</a></li>
-          </ul>
+        <nav class="nav">
+          <a href="#services">Services</a>
+          <a href="#products">Products</a>
+          <a href="#clients">Clients</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a class="btn btn-primary" href="#contact">Get in Touch</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="home-title">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <h1 id="home-title" class="headline">Automation for Better Care</h1>
-            <p class="subhead">Paperless hospitals, effective teams, and resilient IT—delivered with EMR, HR, and infrastructure solutions built for East Africa.</p>
-            <div class="hero-ctas">
-              <a class="btn btn-primary" href="#products">See Products</a>
-              <a class="btn btn-ghost" href="#services">Our Services</a>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container">
+          <h1 class="hero-title">Automation for Better Care</h1>
+          <p class="hero-text">Paperless hospitals, effective teams, and resilient IT—delivered with EMR, HR, and infrastructure solutions built for East Africa.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#products">See Products</a>
+            <a class="btn btn-ghost" href="#services">Our Services</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Services</h2>
+            <p class="section-desc">EMR deployments, HR platforms, and IT infrastructure—planned, implemented, supported.</p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon">🏥</div>
+              <h3 class="card-title">EMR & Hospital Automation</h3>
+              <p class="card-text">Digitize workflows, integrate departments, and enable data-driven decisions.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">👥</div>
+              <h3 class="card-title">Enterprise Platforms</h3>
+              <p class="card-text">HCMS and domain systems engineered for reliability and clarity.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🌐</div>
+              <h3 class="card-title">IT Infrastructure</h3>
+              <p class="card-text">Networks, servers, security, and observability for always-on operations.</p>
             </div>
           </div>
-          <div class="hero-art" aria-hidden="true"></div>
         </div>
       </section>
 
-      <section id="services" class="section services" aria-labelledby="services-title">
+      <section id="products" class="section">
         <div class="container">
           <div class="section-header">
-            <h2 id="services-title">Services</h2>
-            <p>EMR deployments, HR platforms, and IT infrastructure—planned, implemented, supported.</p>
+            <h2 class="section-title">Products</h2>
+            <p class="section-desc">Proven solutions for hospitals and enterprises.</p>
           </div>
           <div class="cards">
-            <article class="card"><i class="fa-solid fa-stethoscope"></i><h3>EMR & Hospital Automation</h3><p>Digitize workflows, integrate departments, and enable data-driven decisions.</p></article>
-            <article class="card"><i class="fa-solid fa-users-gear"></i><h3>Enterprise Platforms</h3><p>HCMS and domain systems engineered for reliability and clarity.</p></article>
-            <article class="card"><i class="fa-solid fa-network-wired"></i><h3>IT Infrastructure</h3><p>Networks, servers, security, and observability for always-on operations.</p></article>
+            <div class="card">
+              <div class="card-icon">🏥</div>
+              <h3 class="card-title">IntelliCare (EMR)</h3>
+              <p class="card-text">Complete EMR for mid-to-large hospitals—paperless by design.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">👤</div>
+              <h3 class="card-title">BitWeavers HCMS</h3>
+              <p class="card-text">Human Capital Management with flexible leave and event timeline.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🖥️</div>
+              <h3 class="card-title">Enterprise IT</h3>
+              <p class="card-text">Hardware, software, and network stack configured for your needs.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="products" class="section products" aria-labelledby="products-title">
+      <section class="clients">
         <div class="container">
           <div class="section-header">
-            <h2 id="products-title">Products</h2>
-            <p>Proven solutions for hospitals and enterprises.</p>
+            <h2 class="section-title">Our Satisfied Clients</h2>
+            <p class="section-desc">Leading hospitals and organizations that rely on our solutions</p>
           </div>
-          <div class="cards">
-            <article class="card"><i class="fa-solid fa-hospital"></i><h3>IntelliCare (EMR)</h3><p>Complete EMR for mid-to-large hospitals—paperless by design.</p></article>
-            <article class="card"><i class="fa-solid fa-id-badge"></i><h3>BitWeavers HCMS</h3><p>Human Capital Management with flexible leave and event timeline.</p></article>
-            <article class="card"><i class="fa-solid fa-server"></i><h3>Enterprise IT</h3><p>Hardware, software, and network stack configured for your needs.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="clients" class="section clients" aria-labelledby="clients-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="clients-title">Clients</h2>
-            <p>Trusted by leading hospitals and organizations.</p>
-          </div>
-          <div class="logo-grid">
-            <a class="logo" href="#" aria-label="Marie Stopes International">
-              <img src="hospitalimage/marie-stopes-int-min (1).png" alt="Marie Stopes International" />
-            </a>
-            <a class="logo" href="#" aria-label="Adama General Hospital & Medical College">
-              <img src="hospitalimage/adama_logo_2-1.png" alt="Adama General Hospital & Medical College" />
-            </a>
-            <a class="logo" href="#" aria-label="Sher Ethiopia">
-              <img src="hospitalimage/sher.jpg" alt="Sher Ethiopia" />
-            </a>
-            <a class="logo" href="#" aria-label="Life Addis Clinical Laboratory">
-              <img src="hospitalimage/lifeaddis.jpg" alt="Life Addis Clinical Laboratory" />
-            </a>
-            <a class="logo" href="#" aria-label="Silk Road General Hospital">
-              <img src="hospitalimage/silk_road.png" alt="Silk Road General Hospital" />
-            </a>
-            <a class="logo" href="#" aria-label="Soddo Christian Hospital">
-              <img src="hospitalimage/soddo_hospital.png" alt="Soddo Christian Hospital" />
-            </a>
-            <a class="logo" href="#" aria-label="Negele General Hospital">
-              <img src="hospitalimage/NEGELE-GEN-ICON-ONLY-300-web-min.png" alt="Negele General Hospital" />
-            </a>
-            <a class="logo" href="#" aria-label="Hallelujah General Hospital">
-              <img src="hospitalimage/hallelujah-website-min.png" alt="Hallelujah General Hospital" />
-            </a>
+          <div class="client-grid">
+            <div class="client-item">
+              <img src="hospitalimage/marie-stopes-int-min (1).png" alt="Marie Stopes International" class="client-logo" />
+              <div class="client-name">Marie Stopes International</div>
+            </div>
+            <div class="client-item">
+              <img src="hospitalimage/adama_logo_2-1.png" alt="Adama General Hospital & Medical College" class="client-logo" />
+              <div class="client-name">Adama General Hospital & Medical College</div>
+            </div>
+            <div class="client-item">
+              <img src="hospitalimage/sher.jpg" alt="Sher Ethiopia General Hospital" class="client-logo" />
+              <div class="client-name">Sher Ethiopia General Hospital</div>
+            </div>
+            <div class="client-item">
+              <img src="hospitalimage/lifeaddis.jpg" alt="Life Addis Clinical Laboratory" class="client-logo" />
+              <div class="client-name">Life Addis Clinical Laboratory</div>
+            </div>
+            <div class="client-item">
+              <img src="hospitalimage/silk_road.png" alt="Silk Road General Hospital" class="client-logo" />
+              <div class="client-name">Silk Road General Hospital</div>
+            </div>
+            <div class="client-item">
+              <img src="hospitalimage/soddo_hospital.png" alt="Soddo Christian Hospital" class="client-logo" />
+              <div class="client-name">Soddo Christian Hospital</div>
+            </div>
+            <div class="client-item">
+              <img src="hospitalimage/NEGELE-GEN-ICON-ONLY-300-web-min.png" alt="Negele General Hospital" class="client-logo" />
+              <div class="client-name">Negele General Hospital</div>
+            </div>
+            <div class="client-item">
+              <img src="hospitalimage/hallelujah-website-min.png" alt="Hallelujah General Hospital" class="client-logo" />
+              <div class="client-name">Hallelujah General Hospital</div>
+            </div>
           </div>
         </div>
       </section>
       
 
-      <section id="contact" class="section contact" aria-labelledby="contact-title">
-        <div class="container contact-grid">
+      <section id="contact" class="section">
+        <div class="container">
           <div class="section-header">
-            <h2 id="contact-title">Contact</h2>
-            <p>Reach out—responses within one business day.</p>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-desc">Reach out—responses within one business day.</p>
           </div>
-          <form class="contact-form" action="#" method="post">
-            <div class="form-row"><label for="name">Name</label><input id="name" name="name" type="text" required /></div>
-            <div class="form-row"><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
-            <div class="form-row"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-          <aside class="contact-info">
-            <ul>
-              <li><i class="fa-solid fa-envelope"></i> contact@thebitweavers.com</li>
-              <li><i class="fa-solid fa-phone"></i> +251-912417511 / +251-73918811</li>
-            </ul>
-          </aside>
+          <div class="contact-grid">
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-input" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div class="contact-info">
+              <ul class="contact-list">
+                <li class="contact-item">
+                  <span>📧</span>
+                  <a href="mailto:contact@thebitweavers.com" class="contact-link">contact@thebitweavers.com</a>
+                </li>
+                <li class="contact-item">
+                  <span>📞</span>
+                  <div>
+                    <a href="tel:+251912417511" class="contact-link">+251-912417511</a>
+                    <span> / </span>
+                    <a href="tel:+25173918811" class="contact-link">+251-73918811</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> Bit Weavers.</p>
-        <a class="to-top" href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© <span id="year"></span> BitWeavers. All rights reserved.</p>
+        <a class="back-top" href="#top" aria-label="Back to top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
       </div>
     </footer>
 
