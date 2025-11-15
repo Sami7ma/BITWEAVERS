@@ -17,8 +17,16 @@
   // Theme Management: apply stored theme and use delegated clicks so it works after DOM moves
   (function initTheme(){
     const stored = localStorage.getItem('theme');
-    if (stored) docEl.setAttribute('data-theme', stored);
-    if (!docEl.getAttribute('data-theme')) docEl.setAttribute('data-theme','light');
+    if (stored) { docEl.setAttribute('data-theme', stored); if (document.body) document.body.setAttribute('data-theme', stored); }
+    if (!docEl.getAttribute('data-theme')) { docEl.setAttribute('data-theme','light'); if (document.body) document.body.setAttribute('data-theme','light'); }
+
+    // Update any theme-toggle icons to reflect current state
+    const current = docEl.getAttribute('data-theme') || 'light';
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      const icon = btn.querySelector('i');
+      if (icon) icon.className = current === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      btn.setAttribute('aria-label', current === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    });
 
     // Delegated click handler for theme toggle — works even if the button is moved in DOM
     document.addEventListener('click', function(e){
@@ -27,6 +35,7 @@
       const cur = docEl.getAttribute('data-theme') || 'light';
       const next = cur === 'dark' ? 'light' : 'dark';
       docEl.setAttribute('data-theme', next);
+      if (document.body) document.body.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
       const icon = btn.querySelector('i');
       if (icon) icon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
@@ -88,5 +97,5 @@
     b.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
   })();
 
-  console.log('🎨 BitWeavers website loaded successfully!');
+  // debug log removed for production
 })();
